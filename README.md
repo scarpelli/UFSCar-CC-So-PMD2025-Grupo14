@@ -33,5 +33,5 @@
      - `[:HAS_FLAVOR]`
 
 ## 4. Resultado esperado  
-- Geração de um relatório com o top‑N de harmonizações entre vinhos e pratos.  
+- Geração de um relatório com o top‑N harmonizações para diferentes perfis de prato e faixas de preço de vinho.  
 - Recomendações extraídas via consultas Cypher.
