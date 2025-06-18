@@ -1,5 +1,12 @@
-# Harmonização de vinhos e pratos  
-**Grupo 14 | Ciência da Computação | UFSCar Sorocaba**
+# Harmonização de vinhos e pratos
+
+**Bacharelado em Ciência da Computação**  
+**Universidade Federal de São Carlos**
+
+### Grupo 14
+- **Bruna Scarpelli**  
+- **Gustavo Sanches Martins Kis**  
+- **Ricardo Yugo Suzuki**
 
 ## 1. Objetivo  
 - Construir um sistema de recomendação para harmonização de vinhos e pratos.  
@@ -33,5 +40,5 @@
      - `[:HAS_FLAVOR]`
 
 ## 4. Resultado esperado  
-- Geração de um relatório com o top‑N harmonizações para diferentes perfis de prato e faixas de preço de vinho.  
+- Geração de um relatório com o top‑N harmonizações para pratos predefinidos e faixas de preço de vinho.  
 - Recomendações extraídas via consultas Cypher.
