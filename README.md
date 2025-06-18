@@ -28,7 +28,7 @@
      - `:Grape`  
      - `:Flavor`  
    - **Relações:**  
-     - `[:USES]`  
+     - `[:CONTAINS]`  
      - `[:MADE_FROM]`  
      - `[:HAS_FLAVOR]`
 
