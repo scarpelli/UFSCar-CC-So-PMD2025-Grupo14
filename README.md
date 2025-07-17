@@ -39,6 +39,8 @@ Este projeto propõe uma solução baseada em dados para facilitar o processo de
 
 ## 🎯 Objetivos
 
+O projeto foi criado com o objetivo de facilitar a harmonização de pratos com vinhos por meio dos sabores que eles possuem. Isto pode ser feito por meio de uma análise molecular dos ingredientes de um prato e por meio do sabor do vinho. Tendo estas informações, buscamos encontrar o maior número de sabores similares entre um prato e um vinho, criando assim uma harmonia no paladar. Logo, serão desenvolvidas, durante o trabalho, análises das melhores harmonizações de acordo também com a faixa de preço dos vinhos, encontrando os melhores vinhos dentro da faixa de preço estipulada pelo usuário.
+  
 **Objetivo principal:**
 - Desenvolver um sistema que facilite a harmonização de pratos com vinhos baseado em análise molecular de sabores.
 
@@ -50,6 +52,16 @@ Este projeto propõe uma solução baseada em dados para facilitar o processo de
 ---
 
 ## 🔬 Metodologia
+
+Para o desenvolvimento do projeto, o primeiro passo foi encontrar datasets específicos para o desenvolvimento das respectivas tabelas. Com isso selecionamos datasets de vinhos e receitas que possuíam as informações de nosso interesse. No entanto, os dados moleculares de ingredientes não estavam dentro de um único arquivo, sendo necessária a criação de um script que uniu todas essas informações em um dataset de ingredientes. Este script baixava cada página de ingrediente em um JSON próprio, sendo elas unidas em um dataset.
+
+Após a ingestão dos dados, foi preciso fazer um tratamento específico em cada dataset, para normalizá-los, permitindo uma modelagem final em Neo4j consistente. Para isto, foi necessária uma padronização na coluna de ingredientes no dataset de receitas, onde foram removidos ingredientes que não estavam presentes no dataset de moléculas. Com isso, foi possível remover receitas que não apresentavam ao mínimo 3 ingredientes, visto que com uma baixa quantidade de dados não seria possível alcançar a melhor combinação de valores possível. 
+
+Além disso, foi necessário fazer um tratamento similar com o dataset de vinhos. No entanto, essa padronização foi feita na coluna de sabores do vinho, sendo esta padronizada de acordo com o sabor que as moléculas obtidas possuíam. 
+
+Por fim, para que tudo isto fosse possível, por meio do dataset de ingredientes e suas moléculas foram criadas duas tabelas intermediárias, sendo uma com os ingredientes e suas moléculas e outra específica para as moléculas existentes e seus sabores.
+
+Finalmente, os dados foram persistidos em tabelas intermediárias no Databricks Catalog, a fim de facilitar a integração com o Neo4j. A partir dessas tabelas, foram criados nós e relacionamentos no Neo4j, onde as análises em Cypher ocorreram.
 
 ### 1. **Ingestão de dados**
 - Carregamento e integração de três datasets distintos
@@ -116,6 +128,10 @@ Este projeto propõe uma solução baseada em dados para facilitar o processo de
 ---
 
 ## 🗂️ Modelo de dados
+
+O modelo de dados foi criado com a intenção de conectar receitas e vinhos por meio de seus sabores. Dessa forma, cada receita possui ingredientes, estes ingredientes podem ter diversas moléculas e as moléculas tem sabores. Olhando pelo outro lado, o nó vinho tem suas características, que são o sabor, logo vinhos também tem sabores. Com isso, as consultas visam encontrar vinhos e ingredientes ou receitas que possuem o maior número de nós de sabor conectando eles, resultando na harmonização ótima. Além disso, existem nós de faixa de preço do vinho e de suas uvas, podendo também essa escolha ser feito por uva preferida ou por faixa de preço que deseja gastar na compra. 
+
+Para uma melhor compreensão as conexões podem ser vistas no diagrama acima.
 
 ### **Nós principais:**
 - `:Recipe` - Receitas culinárias
