@@ -2,9 +2,9 @@
 MATCH (r:Recipe {title:"Croque Monsieur"})
 MATCH (r)-[:CONTAINS_INGREDIENT]->(:Ingredient)-[:CONTAINS_MOLECULE]->(m:Molecule)
 MATCH (m)-[:HAS_FLAVOR_PROFILE]->(f:Flavor)<-[:HAS_CHARACTERISTIC]-(w:Wine)-[:IN_PRICE_RANGE]->(:PriceRange {name:"Budget"})
-WITH w, count(DISTINCT f) AS Score
-RETURN w.title AS Wine, w.price AS Price, Score
-ORDER BY Score DESC, w.price ASC
+WITH w, count(DISTINCT f) AS flavor_overlap
+RETURN w.title AS Wine, w.price AS Price, flavor_overlap
+ORDER BY flavor_overlap DESC, w.price ASC
 LIMIT 3;
 
 // 2. Premium wine for Baked Shrimp La Viata
