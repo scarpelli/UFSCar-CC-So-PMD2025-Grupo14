@@ -7,8 +7,8 @@ RETURN w.title AS Wine, w.price AS Price, flavor_overlap
 ORDER BY flavor_overlap DESC, w.price ASC
 LIMIT 3;
 
-// 2. Premium wine for Baked Shrimp La Viata
-MATCH (r:Recipe {title: "Baked Shrimp La Viata"})-[:CONTAINS_INGREDIENT]->(i:Ingredient)
+// 2. Premium wine for Spaghetti Carbonara
+MATCH (r:Recipe {title: "Spaghetti Carbonara"})-[:CONTAINS_INGREDIENT]->(i:Ingredient)
 MATCH (i)-[:CONTAINS_MOLECULE]->(m:Molecule)-[:HAS_FLAVOR_PROFILE]->(f:Flavor)
 MATCH (w:Wine)-[:HAS_CHARACTERISTIC]->(f)
 MATCH (w)-[:MADE_FROM]->(g:Grape)
