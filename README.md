@@ -300,7 +300,7 @@ Com o intuito de fomentar novas pesquisas e facilitar o trabalho de outros desen
 Os seguintes arquivos foram disponibilizados no diretório `data_contrib/`:
 - `ingredients_molecules.json`: Tabela que relaciona os ingredientes normalizados às suas moléculas constituintes.
 - `molecules.json`: Catálogo detalhado das moléculas com seus respectivos perfis de sabor.
-- `recipes.json`: A base de dados principal de receitas, já limpa e padronizada.
+- `recipes.rar`: A base de dados principal de receitas, já limpa e padronizada.
 - `wines.json`: A base de dados de vinhos, com características e notas de sabor tratadas.
 
 ---
