@@ -31,7 +31,8 @@ Este projeto apresenta o desenvolvimento de um sistema de recomendação para a 
     * 7.1. [Resultados das análises](#71-resultados-das-análises)
     * 7.2. [Limitações](#72-limitações)
 8.  [Conclusão](#8-conclusão)
-9.  [Referências](#9-referências)
+9.  [Contribuição para a comunidade](#9-contribuição-para-a-comunidade)
+10.  [Referências](#10-referências)
 
 ---
 
@@ -292,7 +293,19 @@ O projeto desenvolveu um sistema de harmonização de vinhos e pratos baseado em
 
 ---
 
-## 9. Referências
+## 9. Contribuição para a comunidade
+
+Com o intuito de fomentar novas pesquisas e facilitar o trabalho de outros desenvolvedores, os quatro datasets gerados e tratados neste projeto estão publicamente disponíveis em formato JSON.
+
+Os seguintes arquivos foram disponibilizados no diretório `data_contrib/`:
+- `ingredients_molecules.json`: Tabela que relaciona os ingredientes normalizados às suas moléculas constituintes.
+- `molecules.json`: Catálogo detalhado das moléculas com seus respectivos perfis de sabor.
+- `recipes.json`: A base de dados principal de receitas, já limpa e padronizada.
+- `wines.json`: A base de dados de vinhos, com características e notas de sabor tratadas.
+
+---
+
+## 10. Referências
 
 -   **[Apache Spark](https://spark.apache.org/docs/latest/sql-programming-guide.html)**: Usado para processar e transformar os dados dos arquivos CSV.
 -   **[Neo4j (Banco de Dados de Grafo)](https://neo4j.com/developer/graph-database/)**: Utilizado para modelar e armazenar as conexões entre vinhos, ingredientes e moléculas.
